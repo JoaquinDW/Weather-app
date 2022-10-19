@@ -1,0 +1,139 @@
+// Vitest Snapshot v1
+
+exports[`getWeatherData > should get weather data > https://api.openweathermap.org/data/2.5/weather?q=London&apasdsasdasddpid=923c12a56b9f714ede562b89e7c9523f 1`] = `
+{
+  "base": "stations",
+  "clouds": {
+    "all": 0,
+  },
+  "cod": 200,
+  "coord": {
+    "lat": 51.5085,
+    "lon": -0.1257,
+  },
+  "dt": 1666063123,
+  "id": 2643743,
+  "main": {
+    "feels_like": 282.38,
+    "humidity": 94,
+    "pressure": 1025,
+    "temp": 282.38,
+    "temp_max": 284.01,
+    "temp_min": 278.21,
+  },
+  "name": "London",
+  "sys": {
+    "country": "GB",
+    "id": 2075535,
+    "sunrise": 1666074545,
+    "sunset": 1666112517,
+    "type": 2,
+  },
+  "timezone": 3600,
+  "visibility": 10000,
+  "weather": [
+    {
+      "description": "clear sky",
+      "icon": "01n",
+      "id": 800,
+      "main": "Clear",
+    },
+  ],
+  "wind": {
+    "deg": 0,
+    "speed": 1.03,
+  },
+}
+`;
+
+exports[`getWeatherData > should get weather data > https://api.openweathermap.org/data/2.5/weather?q=London&apasdsdpid=923c12a56b9f714ede562b89e7c9523f 1`] = `
+{
+  "base": "stations",
+  "clouds": {
+    "all": 0,
+  },
+  "cod": 200,
+  "coord": {
+    "lat": 51.5085,
+    "lon": -0.1257,
+  },
+  "dt": 1666063123,
+  "id": 2643743,
+  "main": {
+    "feels_like": 282.38,
+    "humidity": 94,
+    "pressure": 1025,
+    "temp": 282.38,
+    "temp_max": 284.01,
+    "temp_min": 278.21,
+  },
+  "name": "London",
+  "sys": {
+    "country": "GB",
+    "id": 2075535,
+    "sunrise": 1666074545,
+    "sunset": 1666112517,
+    "type": 2,
+  },
+  "timezone": 3600,
+  "visibility": 10000,
+  "weather": [
+    {
+      "description": "clear sky",
+      "icon": "01n",
+      "id": 800,
+      "main": "Clear",
+    },
+  ],
+  "wind": {
+    "deg": 0,
+    "speed": 1.03,
+  },
+}
+`;
+
+exports[`getWeatherData > should get weather data > https://api.openweathermap.org/data/2.5/weather?q=London&appid=923c12a56b9f714ede562b89e7c9523f 1`] = `
+{
+  "base": "stations",
+  "clouds": {
+    "all": 0,
+  },
+  "cod": 200,
+  "coord": {
+    "lat": 51.5085,
+    "lon": -0.1257,
+  },
+  "dt": 1666063123,
+  "id": 2643743,
+  "main": {
+    "feels_like": 282.38,
+    "humidity": 94,
+    "pressure": 1025,
+    "temp": 282.38,
+    "temp_max": 284.01,
+    "temp_min": 278.21,
+  },
+  "name": "London",
+  "sys": {
+    "country": "GB",
+    "id": 2075535,
+    "sunrise": 1666074545,
+    "sunset": 1666112517,
+    "type": 2,
+  },
+  "timezone": 3600,
+  "visibility": 10000,
+  "weather": [
+    {
+      "description": "clear sky",
+      "icon": "01n",
+      "id": 800,
+      "main": "Clear",
+    },
+  ],
+  "wind": {
+    "deg": 0,
+    "speed": 1.03,
+  },
+}
+`;
