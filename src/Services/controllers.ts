@@ -103,7 +103,6 @@ const formatForecastWeather = (data) => {
       icon: day.weather[0].icon,
     };
   });
-  // new Date(1665597600 * 1000).toLocaleDateString("es-AR")
   const { 1: one, 2: two, 3: three, 4: four, 5: five } = list;
   const WeatherHour = [one, two, three, four, five].map((hour) => {
     return {
@@ -112,13 +111,7 @@ const formatForecastWeather = (data) => {
       icon: hour.weather[0].icon,
     };
   });
-  /*hourly = hourly.slice(1, 6).map((hour) => {
-    return {
-      title: formatToLocalTime(hour.dt, timezone, "hh:mm a"),
-      temp: hour.temp,
-      icon: hour.weather[0].icon,
-    };
-  });*/
+
   return { timezone, newList, WeatherHour };
 };
 
@@ -150,47 +143,3 @@ const iconUrlFromCode = (code) => {
 };
 export default getFormatedWeatherData;
 export { iconUrlFromCode, formatToLocalTime };
-
-/*export const clima = {
-  weather: {
-    fetch: async (city: City): Promise<Weather> => {
-      const req = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=${apiKey}`
-      );
-      const response: RawWeather = await req.json();
-
-      return {
-        city: {
-          id: city.id,
-          name: city.name,
-          dt: new Date(response.dt * 1000).toLocaleDateString("es-AR"),
-        },
-        forecast: {
-          temp: Math.round(response.main.temp - 273.15),
-          min: Math.round(response.main.temp_min - 273.15),
-          max: Math.round(response.main.temp_max - 273.15),
-          description: response.weather[0].description,
-        },
-      };
-    },
-  },
-};
-/*const getCurrentWeather = async (city: City): Promise<Weather> => {
-  const apiUrl = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=${apiKey}`
-  );
-  const response: RawWeather = await apiUrl.json();
-  return {
-    city: {
-      id: city.id,
-      name: city.name,
-      dt: new Date(response.dt * 1000).toLocaleDateString("es-AR"),
-    },
-    forecast: {
-      temp: Math.round(response.main.temp - 273.15),
-      min: Math.round(response.main.temp_min - 273.15),
-      max: Math.round(response.main.temp_max - 273.15),
-      description: response.weather[0].description,
-    },
-  };
-};*/
