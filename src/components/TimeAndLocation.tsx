@@ -4,7 +4,6 @@ import { Weather } from "../types";
 
 // eslint-disable-next-line react/prop-types
 function TimeAndLocation(props: any): any {
-  console.log(props);
   return (
     <div>
       <div className="flex items-center justify-center my-6">
@@ -14,7 +13,7 @@ function TimeAndLocation(props: any): any {
       </div>
 
       <div className="flex items-center justify-center my-3">
-        <p className="text-white text-3xl font-medium">{`${props.name}, ${props.country}`}</p>
+        <p className="text-white text-3xl font-medium">{`${props.weather.name}, ${props.weather.country}`}</p>
       </div>
     </div>
   );
