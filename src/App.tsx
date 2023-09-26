@@ -46,6 +46,11 @@ function App() {
           <Forecast title="Daily Forecast" items={weather.newList} />
         </div>
       )}
+      <footer className="pt-10">
+        <p className="text-center text-gray-200 text-xs">
+          Created by Joaquin De Weert
+        </p>
+      </footer>
     </main>
   );
 }
