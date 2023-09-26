@@ -1,6 +1,7 @@
 import React from "react";
+import { City } from "../types";
 
-export default function DefaultCities({ setQuery }) {
+export default function DefaultCities({ setQuery }: any) {
   const CITIES: Record<string, City> = {
     CABA: {
       id: "CABA",

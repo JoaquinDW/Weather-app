@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useState, useEffect } from "react";
-import type { Weather } from "../types";
+//import type { Weather } from "./types/Weather";
 import "./taildwind.css";
 import SearchBar from "./components/SearchBar";
 import TimeAndLocation from "./components/TimeAndLocation";
@@ -11,7 +11,7 @@ import DefaultCities from "./components/DefaultCities";
 
 function App() {
   const [query, setQuery] = useState({ q: "Corrientes" });
-  const [weather, setWeather] = useState<Weather | null>(null);
+  const [weather, setWeather] = useState<any>(null);
 
   useEffect(() => {
     const fetchWeather = async () => {

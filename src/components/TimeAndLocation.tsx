@@ -1,18 +1,20 @@
 import React from "react";
 import { formatToLocalTime } from "../Services/controllers";
+import { Weather } from "../types";
 
 // eslint-disable-next-line react/prop-types
-function TimeAndLocation({ weather: { dt, name, country } }) {
+function TimeAndLocation(props: any): any {
+  console.log(props);
   return (
     <div>
       <div className="flex items-center justify-center my-6">
         <p className="text-white text-xl font-extralight">
-          {formatToLocalTime(dt)}
+          {formatToLocalTime(props.weather.dt)}
         </p>
       </div>
 
       <div className="flex items-center justify-center my-3">
-        <p className="text-white text-3xl font-medium">{`${name}, ${country}`}</p>
+        <p className="text-white text-3xl font-medium">{`${props.name}, ${props.country}`}</p>
       </div>
     </div>
   );

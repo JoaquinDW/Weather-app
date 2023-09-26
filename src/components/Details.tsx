@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { formatToLocalTime, iconUrlFromCode } from "../Services/controllers";
+import { Icon } from "@iconify/react";
+
+/*
 import {
   UilTemperature,
   UilTear,
@@ -8,6 +11,7 @@ import {
   UilSun,
   UilSunset,
 } from "@iconscout/react-unicons";
+*/
 
 export default function Details({
   weather: {
@@ -23,6 +27,8 @@ export default function Details({
     feels_like,
     timezone,
   },
+}: {
+  weather: any;
 }) {
   return (
     <div>
@@ -35,7 +41,7 @@ export default function Details({
 
         <div className="flex flex-col space-y-2">
           <div className="flex font-light text-sm items-center justify-center">
-            <UilTemperature size={18} className="mr-1" />
+            <Icon icon="uil:temperature" width={18} className="mr-1" />
             Real Fell:
             <span className="font-medium ml-1">
               {`${Math.round(feels_like - 273.15)}°C`}
@@ -43,13 +49,13 @@ export default function Details({
           </div>
 
           <div className="flex font-light text-sm items-center justify-center">
-            <UilTear size={18} />
+            <Icon icon="uil:tear" width={18} />
             Humidity:
             <span className="font-medium ml-1">{`${humidity}%`}</span>
           </div>
 
           <div className="flex font-light text-sm items-center justify-center">
-            <UilWind size={18} />
+            <Icon icon="uil:wind" width={18} />
             Wind:
             <span className="font-medium ml-1">{`${speed.toFixed()} km/h`}</span>
           </div>
@@ -57,7 +63,7 @@ export default function Details({
       </div>
 
       <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
-        <UilSun />
+        <Icon icon="uil:sun" />
         <p className="font-light">
           Rise:
           <span className="font-medium ml-1">
@@ -66,7 +72,7 @@ export default function Details({
         </p>
         <p className="font-light">|</p>
 
-        <UilSunset />
+        <Icon icon="uil:sunset" />
         <p className="font-light">Set:</p>
         <span className="font-medium ml-1">
           {" "}
@@ -74,7 +80,7 @@ export default function Details({
         </span>
         <p className="font-light">|</p>
 
-        <UilSun />
+        <Icon icon="uil:sun" />
         <p className="font-light">
           High:
           <span className="font-medium ml-1">
@@ -83,7 +89,7 @@ export default function Details({
         </p>
         <p className="font-light">|</p>
 
-        <UilSun />
+        <Icon icon="uil:sun" />
         <p className="font-light">
           Low:
           <span className="font-medium ml-1">

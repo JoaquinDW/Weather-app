@@ -1,7 +1,18 @@
 import React from "react";
 
-export default function Forecast({ title, items }) {
-  console.log(items[0].title);
+interface Item {
+  title: string;
+  icon: string;
+  temp: number;
+  Date: string;
+}
+
+interface ForecastProps {
+  title: string;
+  items: Item[];
+}
+
+export default function Forecast({ title, items }: ForecastProps): JSX.Element {
   return (
     <div>
       <div className="flex items-center justify-start mt-6">
@@ -10,7 +21,7 @@ export default function Forecast({ title, items }) {
       <hr className="my-2" />
 
       <div className="flex flex-row items-center justify-between text-white">
-        {items.map((item, index) => {
+        {items.map((item: Item, index: number) => {
           return (
             <div
               className="flex flex-col items-center justify-center"

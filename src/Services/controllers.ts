@@ -1,4 +1,4 @@
-import type { Weather } from "../src/types";
+import type { Weather } from "../types";
 import { DateTime } from "luxon";
 
 export type RawWeather = {
@@ -46,13 +46,19 @@ export type RawWeather = {
 const apiKey = "923c12a56b9f714ede562b89e7c9523f";
 const OriginUrl = "https://api.openweathermap.org/data/2.5";
 
-export function getWeatherData(infoType, searchParams) {
+export function getWeatherData(
+  infoType: any,
+  searchParams: any
+): Promise<RawWeather> {
   const url = new URL(OriginUrl + "/" + infoType);
-  url.search = new URLSearchParams({ ...searchParams, appid: apiKey });
+  url.search = new URLSearchParams({
+    ...searchParams,
+    appid: apiKey,
+  }).toString();
   return fetch(url).then((res) => res.json());
 }
 
-export const formatCurrentWeather = (data: RawWeather): Weather => {
+export const formatCurrentWeather = (data: RawWeather): any => {
   const {
     coord: { lat, lon },
     main: { temp, feels_like, temp_min, temp_max, humidity },
@@ -66,6 +72,18 @@ export const formatCurrentWeather = (data: RawWeather): Weather => {
   console.log(data.coord);
 
   const { main: details, icon } = weather[0];
+
+  /*
+  return {
+    coord: { lat, lon },
+    main: { temp, feels_like, temp_min, temp_max, humidity },
+    name,
+    dt,
+    timezone,
+    sys: { country, sunrise, sunset },
+    wind: { speed },
+  };
+ */
 
   return {
     lat,
@@ -87,11 +105,11 @@ export const formatCurrentWeather = (data: RawWeather): Weather => {
   };
 };
 
-export function KelvinToCelcius(temp) {
+export function KelvinToCelcius(temp: any): number {
   return Math.round(temp - 273.15);
 }
 
-const formatForecastWeather = (data) => {
+const formatForecastWeather = (data: any) => {
   // eslint-disable-next-line prefer-const
   let { timezone, list } = data;
   const { 0: first, 8: second, 16: third, 24: fourth, 32: fifth } = list;
@@ -115,7 +133,7 @@ const formatForecastWeather = (data) => {
   return { timezone, newList, WeatherHour };
 };
 
-const getFormatedWeatherData = async (searchParams) => {
+const getFormatedWeatherData = async (searchParams: any) => {
   const formatedCurrentWeather = await getWeatherData(
     "weather",
     searchParams
@@ -135,10 +153,13 @@ const getFormatedWeatherData = async (searchParams) => {
   return { ...formatedCurrentWeather, ...formatedForecastWeather };
 };
 
-const formatToLocalTime = (secs, zone, format = "cccc, dd LLL yyyy'") =>
-  DateTime.fromSeconds(secs).setZone("UTC-3").toFormat(format);
+const formatToLocalTime = (
+  secs: any,
+  zone = "UTF-8",
+  format = "cccc, dd LLL yyyy'"
+) => DateTime.fromSeconds(secs).setZone("UTC-3").toFormat(format);
 //DateTime.fromSeconds(secs).setZone(zone).toFormat(format)
-const iconUrlFromCode = (code) => {
+const iconUrlFromCode = (code: any) => {
   return `http://openweathermap.org/img/wn/${code}@2x.png`;
 };
 export default getFormatedWeatherData;
