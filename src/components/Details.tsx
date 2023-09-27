@@ -32,15 +32,20 @@ export default function Details({
 }) {
   return (
     <div>
-      <div className="flex items-center justify-center py-6 text-xl text-cyan-300">
+      <div className="flex items-center justify-center py-6 text-xl text-cyan-300 ">
         <p>{details}</p>
       </div>
-      <div className="flex flex-row items-center justify-between text-white py-3">
-        <img src={iconUrlFromCode(icon)} alt="" className="w-32" />
-        <p className="text-5xl">{`${Math.round(temp - 273.15)} °C`}</p>
 
-        <div className="flex flex-col space-y-2">
-          <div className="flex font-light text-sm items-center justify-center">
+      <div className="flex flex-col items-center justify-center  gap-4 text-white py-3 sm:flex-row text-center">
+        <div className="flex items-center flex-col">
+          <img src={iconUrlFromCode(icon)} alt="" className="w-32" />
+          <p className="text-4xl sm:text-5xl mr-2 ">
+            {`${Math.round(temp - 273.15)} °C`}
+          </p>
+        </div>
+
+        <div className="flex flex-col space-y-2 gap-2">
+          <div className="flex font-light text-sm items-center justify-center ">
             <Icon icon="uil:temperature" width={18} className="mr-1" />
             Real Fell:
             <span className="font-medium ml-1">
@@ -62,8 +67,9 @@ export default function Details({
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
+      <div className="flex  items-center justify-center space-x-2 text-white text-sm py-3 text-center ">
         <Icon icon="uil:sun" />
+
         <p className="font-light">
           Rise:
           <span className="font-medium ml-1">
