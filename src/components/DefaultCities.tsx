@@ -1,5 +1,5 @@
-import React from "react";
-import { City } from "../types";
+import React from "react"
+import { City } from "../types"
 
 export default function DefaultCities({ setQuery }: any) {
   const CITIES: Record<string, City> = {
@@ -23,10 +23,10 @@ export default function DefaultCities({ setQuery }: any) {
       id: "mendoza",
       name: "Mendoza",
     },
-  };
+  }
 
   return (
-    <div className="flex items-center justify-around my-6 flex-col sm:flex-row">
+    <div className="flex items-center justify-around bar overflow-x-scroll gap-12 xl:gap-2 w-full my-4 flex-row">
       {Object.values(CITIES).map((city) => (
         <button
           key={city.id}
@@ -38,5 +38,5 @@ export default function DefaultCities({ setQuery }: any) {
         </button>
       ))}
     </div>
-  );
+  )
 }

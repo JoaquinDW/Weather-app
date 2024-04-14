@@ -9,3 +9,11 @@
         font-family: 'Poppins', sans-serif;
     }
 }
+
+* {
+    scrollbar-width: thin;
+}
+
+.bar {
+    scrollbar-width: none;
+}
