@@ -32,7 +32,7 @@ function App() {
 
   return (
     <main
-      className={`mx-auto max-w-screen-xl py-5 px-6 xl:px-32 bg-gradient-to-br  h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
+      className={`mx-auto max-w-screen-full py-5 px-6 xl:px-32 bg-gradient-to-br  h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
     >
       <DefaultCities setQuery={setQuery} />
       <SearchBar setQuery={setQuery} />
