@@ -3,7 +3,7 @@
     "background_color": "#fafafa",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/src/",
+    "start_url": "/",
     "name": "MyWeather",
     "short_name": "My Weather App",
     "description": "Minimalistic weather app ",
