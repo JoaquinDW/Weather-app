@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import { formatToLocalTime, iconUrlFromCode } from "../Services/controllers";
-import { Icon } from "@iconify/react";
+import React from "react"
+import { formatToLocalTime, iconUrlFromCode } from "../Services/controllers"
+import { Icon } from "@iconify/react"
 
 /*
 import {
@@ -28,7 +28,7 @@ export default function Details({
     timezone,
   },
 }: {
-  weather: any;
+  weather: any
 }) {
   return (
     <div>
@@ -67,11 +67,11 @@ export default function Details({
         </div>
       </div>
 
-      <div className="flex  items-center justify-center space-x-2 text-white text-sm py-3 text-center ">
+      <div className="flex  items-center justify-center space-x-2 gap-1 text-white text-sm py-3 text-center ">
         <Icon icon="uil:sun" />
 
-        <p className="font-light">
-          Rise:
+        <p className="font-light ">
+          Rise: <br />
           <span className="font-medium ml-1">
             {formatToLocalTime(sunrise, timezone, "hh:mm a")}
           </span>
@@ -79,16 +79,18 @@ export default function Details({
         <p className="font-light">|</p>
 
         <Icon icon="uil:sunset" />
-        <p className="font-light">Set:</p>
-        <span className="font-medium ml-1">
-          {" "}
-          {formatToLocalTime(sunset, timezone, "hh:mm a")}
-        </span>
+        <p className="font-light">
+          Set: <br />
+          <span className="font-medium ml-1">
+            {" "}
+            {formatToLocalTime(sunset, timezone, "hh:mm a")}
+          </span>
+        </p>
         <p className="font-light">|</p>
 
         <Icon icon="uil:sun" />
         <p className="font-light">
-          High:
+          High: <br />
           <span className="font-medium ml-1">
             {`${Math.round(temp_max - 273.15)}°C`}
           </span>
@@ -97,12 +99,12 @@ export default function Details({
 
         <Icon icon="uil:sun" />
         <p className="font-light">
-          Low:
+          Low: <br />
           <span className="font-medium ml-1">
             {`${Math.round(temp_min - 273.15)}°C`}
           </span>
         </p>
       </div>
     </div>
-  );
+  )
 }
